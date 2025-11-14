@@ -1,40 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <title>Your Giga Pet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- jQuery first -->
   <script src="https://code.jquery.com/jquery-2.2.1.min.js"
           integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
           crossorigin="anonymous"></script>
+
+  <!-- your script (after jQuery) -->
   <script src="script.js" defer></script>
+
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .pet-image { transition: transform 200ms ease, filter 200ms ease; }
+    .pet-message { font-weight: bold; }
+  </style>
 </head>
 
 <body>
   <header>
-      <h3>
-        This is your <del> &nbsp;&nbsp; GigaPet &nbsp;&nbsp;</del>
-      </h3>
-      <h1> <strong> GigaChad</strong></h1>
+    <h3>This is your <del>&nbsp;&nbsp; GigaPet &nbsp;&nbsp;</del></h3>
+    <h1><strong>GigaChad</strong></h1>
+
   </header>
 
   <section class="pet-image-container">
+    <!-- Starting image-->
     <img class="pet-image" src="images/GigaChad.PNG" alt="Gigachad" />
   </section>
 
   <section class="dashboard">
     <div>Name: <strong><span class="name"></span></strong></div>
     <div>Weight: <strong><span class="weight"></span> lbs</strong></div>
-    <div>Happiness: <strong><span class="happiness"></span> </strong></div>
-
-    <!-- visual message area for slideToggle -->
-    <div class="pet-message" style="display:none; margin-top:10px;"></div>
+    <div>Happiness: <strong><span class="happiness"></span></strong></div>
+    <div>Strength: <strong><span class="strength"></span></strong></div>
+    <div>Energy: <strong><span class="energy"></span></strong></div>
 
     <div class="button-container">
       <button class="Consume-button">Consume</button>
-      <button class="Aurafarm-button">Aurafarm</button>
-      <button class="Exercise-button">Exercise</button>
       <button class="Flex-button">Flex</button>
+      <button class="Exercise-button">Exercise</button>
+      <button class="Rest-button">Rest</button>
     </div>
   </section>
-</body>
+
+  <section>
+    <!-- slideDown/slideUp -->
+    <div class="pet-message" style="display:none; margin-top:10px;"></div>
+  </section>
+    
+  
+  </body>
+
+  
+</html>
