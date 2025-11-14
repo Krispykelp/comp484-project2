@@ -22,8 +22,8 @@ $(function () {
 
   const IMAGES = {
     Consume:   "images/gigachad2.png",
-    Flex:      "images/GigachadFlex.PNG",
-    Exercise:  "images/GigachadExcercise.PNG",
+    Flex:      "images/GigachadFlex.png",
+    Exercise:  "images/GigachadExcercise.png",
     Rest:      "images/gigachadsitting.png",
     Default:   DEFAULT_IMAGE
   };
