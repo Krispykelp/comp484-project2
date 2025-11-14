@@ -4,9 +4,10 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     checkAndUpdatePetInfoInHtml();
   
     // When each button is clicked, it will "call" function for that button (functions are below)
-    $('.treat-button').click(clickedTreatButton);
-    $('.play-button').click(clickedPlayButton);
-    $('.exercise-button').click(clickedExerciseButton);
+    $('.Consume-button').click(clickedConsumeButton);
+    $('.Aurafarm-button').click(clickedAurafarmButton);
+    $('.Excercise-button').click(clickedExcerciseButton);
+    $('.Flex-button').click(clickedFlexButton);
   
 
   
@@ -14,32 +15,37 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
   })
   
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
-    var pet_info = {name:"My Pet Name", weight:"??", happiness:"??"};
+    var pet_info = {name:"Chad", weight:"??", happiness:"??"};
   
-    function clickedTreatButton() {
-      // Increase pet happiness
-      // Increase pet weight
+    function clickedConsumeButton() {
+      // Increase pet happiness, pet weight, energy
       checkAndUpdatePetInfoInHtml();
     }
     
-    function clickedPlayButton() {
-      // Increase pet happiness
-      // Decrease pet weight
+    function clickedAurafarmButton() {
+      // Increase happiness, Aura score
+      // Decrease energy
       checkAndUpdatePetInfoInHtml();
     }
     
-    function clickedExerciseButton() {
-      // Decrease pet happiness
-      // Decrease pet weight
+    function clickedExcerciseButton() {
+      // Increase strength, Muscle Mass, happiness 
+      // Decrease energy
+      checkAndUpdatePetInfoInHtml();
+    }
+
+     function clickedFlexButton() {
+      // Increase Happiness
+      // Decrease Energy  
       checkAndUpdatePetInfoInHtml();
     }
   
     function checkAndUpdatePetInfoInHtml() {
-      checkWeightAndHappinessBeforeUpdating();  
+      checkStatsBeforeUpdating();  
       updatePetInfoInHtml();
     }
     
-    function checkWeightAndHappinessBeforeUpdating() {
+    function checkStatsBeforeUpdating() {
       // Add conditional so if weight is lower than zero.
     }
     
