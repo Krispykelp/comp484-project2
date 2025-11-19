@@ -25,6 +25,7 @@ $(function () {
     Flex:      "images/GigachadFlex.png",
     Exercise:  "images/GigachadExcercise.png",
     Rest:      "images/gigachadsitting.png",
+    Juiced:    "images/GigachadJuiced.jpg", 
     Default:   DEFAULT_IMAGE
   };
 
@@ -91,7 +92,16 @@ $(function () {
     if (pet_info.happiness >= 8) scale += 0.02;
     scale = Math.max(0.9, Math.min(scale, 2.4)); 
 
-    $("img").css({ transform: `scale(${scale})` });
+    const $img = $(".pet-image");
+  
+      $img.toggleClass("hungry",    pet_info.weight <= 220)
+      $img.toggleClass("juiced",    pet_info.weight >= 270);
+      
+      if ($img.hasClass("hungry")) {
+      scale *= 0.5; 
+      }
+
+    $img.css({ transform: `scale(${scale})` }); 
 
     updateButtonStates();
   }
@@ -145,14 +155,17 @@ $(function () {
     });
   });
 
-  // Flex =  boosts happiness
+  // Flex = boosts happiness
   $(".Flex-button").on("click", function () {
+    const flexImage = $(".pet-image").hasClass("juiced") ? "Juiced" : "Flex"; 
     action({
       energyCost: 10,
       dW: 0, dH: +1,
-      imgKey: "Flex",
+      imgKey: flexImage, 
       msg: " Impressive. "
     });
+    const $img = $(".pet-image").addClass("flash");
+    setTimeout(() => $img.removeClass("flash"), 300);
   });
 
   // Exercise = costs more energy, increases strength, happiness, weight 
@@ -168,7 +181,7 @@ $(function () {
 
   // Rest =  energy for weight (always active)
   $(".Rest-button").on("click", function () {
-    restoreEnergy(50); // restore amount
+    restoreEnergy(50);
     pet_info.weight = clamp(LIMITS.weightMin, pet_info.weight - 1, LIMITS.weightMax);
 
     swapImage("Rest");
