@@ -94,14 +94,14 @@ $(function () {
 
     const $img = $(".pet-image");
   
-      $img.toggleClass("hungry",    pet_info.weight <= 220)
+      $img.toggleClass("hungry",    pet_info.weight <= 220) //<-- Method 1
       $img.toggleClass("juiced",    pet_info.weight >= 270);
       
       if ($img.hasClass("hungry")) {
       scale *= 0.5; 
       }
 
-    $img.css({ transform: `scale(${scale})` }); 
+    $img.css({ transform: `scale(${scale})` }); //<-- Method 2
 
     updateButtonStates();
   }
